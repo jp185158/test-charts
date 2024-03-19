@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  efs-simulator:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-03-19T22:26:50.213270364Z"
+    description: A Helm chart for Kubernetes
+    digest: 53f4d555080dd4120aaa36eb57414eb95d6ff9e72bc7acf8b6f649c2e0884a91
+    name: efs-simulator
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/efs-simulator-0.1.0/efs-simulator-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-03-19T22:26:50.213287486Z"
