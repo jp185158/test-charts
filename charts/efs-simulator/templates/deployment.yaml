@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: efs-simulator
+  labels:
+    app: efs-simulator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: efs-simulator
+  template:
+    metadata:
+      labels:
+        app: efs-simulator
+    spec:
+      containers:
+      - name: efs-simulator
+        image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:latest
+        ports:
+        - containerPort: 8000
+        - containerPort: 1883
+        - containerPort: 9001
