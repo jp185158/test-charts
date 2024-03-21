@@ -5,6 +5,8 @@ metadata:
   labels:
     app: efs-simulator
 spec:
+  imagePullSecrets:
+    - name: edge-docker-pull-secret
   replicas: 1
   selector:
     matchLabels:
