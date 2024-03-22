@@ -16,10 +16,10 @@ spec:
     spec:
       imagePullSecrets:
         - name: edge-docker-pull-secret      
-    containers:
-      - name: efs-simulator
-        image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:0.0.8
-        ports:
-        - containerPort: 8000
-        - containerPort: 1883
-        - containerPort: 9001
+      containers:
+        - name: efs-simulator
+          image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:0.0.8
+          ports:
+          - containerPort: 8000
+          - containerPort: 1883
+          - containerPort: 9001
