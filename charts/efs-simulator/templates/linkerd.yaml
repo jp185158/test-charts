@@ -1,0 +1,19 @@
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
+  name: efs-simulator-server
+spec:
+  port: http
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: HTTP/1
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: efs-simulator-server-auth
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: efs-simulator-server
