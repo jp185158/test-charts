@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: efs-simulator
+spec:
+  selector:
+    app.kubernetes.io/name: efs-simulator
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 8000
+    - name: mqtt 
+      protocol: TCP
+      port: 9001
+      targetPort: 9001
