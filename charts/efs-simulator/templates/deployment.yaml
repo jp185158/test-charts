@@ -4,6 +4,8 @@ metadata:
   name: efs-simulator
   labels:
     app: efs-simulator
+  annotations:
+    linkerd.io/inject: "disabled"    
 spec:
   replicas: 1
   selector:
