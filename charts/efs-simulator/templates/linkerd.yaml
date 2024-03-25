@@ -17,3 +17,23 @@ spec:
     unauthenticated: true
   server:
     name: efs-simulator-server
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
+  name: efs-simulator-mqttws
+spec:
+  port: 9001
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: HTTP/1
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: efs-simulator-mqttws-auth
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: efs-simulator-mqttws
