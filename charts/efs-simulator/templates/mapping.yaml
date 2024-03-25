@@ -18,3 +18,5 @@ spec:
   hostname: "efs-simulator.store.ncr.corp"
   prefix: "/mqtt/"
   service: efs-simulator:9001
+  allow_upgrade:
+    - websocket
