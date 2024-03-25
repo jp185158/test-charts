@@ -1,10 +1,10 @@
 apiVersion: getambassador.io/v3alpha1
 kind: Mapping
 metadata:
-  name: efs-simulator-mapping
+  name: efs-simulator
   namespace: efs-simulator
 spec:
-  hostname: "store.ncr.corp"
-  prefix: /efs-simulator/
+  hostname: "efs-simulator.store.ncr.corp"
+  prefix: "/"
   service: efs-simulator:80
  
