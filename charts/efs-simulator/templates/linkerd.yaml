@@ -3,7 +3,7 @@ kind: Server
 metadata:
   name: efs-simulator-server
 spec:
-  port: http
+  port: 8000
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: HTTP/1
