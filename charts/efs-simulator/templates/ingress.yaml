@@ -12,4 +12,13 @@ spec:
           service:
             name: efs-simulator
             port:
-              number: 8000
+              number: 80
+  - http:
+      paths:
+      - pathType: Prefix
+        path: /mqtt
+        backend:
+          service:
+            name: efs-simulator
+            port:
+              number: 9001

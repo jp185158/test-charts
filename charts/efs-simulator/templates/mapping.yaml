@@ -7,4 +7,14 @@ spec:
   hostname: "efs-simulator.store.ncr.corp"
   prefix: "/"
   service: efs-simulator:80
- 
+  
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Mapping
+metadata:
+  name: efs-simulator-mosquitto-ws
+  namespace: efs-simulator
+spec:
+  hostname: "efs-simulator.store.ncr.corp"
+  prefix: "/mqtt"
+  service: efs-simulator:9001
