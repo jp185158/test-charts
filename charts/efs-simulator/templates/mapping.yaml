@@ -5,7 +5,7 @@ metadata:
   namespace: efs-simulator
 spec:
   hostname: "efs-simulator.store.ncr.corp"
-  prefix: "/"
+  prefix: "/web/"
   service: efs-simulator:80
   
 ---
@@ -16,5 +16,5 @@ metadata:
   namespace: efs-simulator
 spec:
   hostname: "efs-simulator.store.ncr.corp"
-  prefix: "/mqtt"
+  prefix: "/mqtt/"
   service: efs-simulator:9001
