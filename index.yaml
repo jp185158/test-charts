@@ -4,6 +4,18 @@ entries:
   - annotations:
       managed-by: ncr
     apiVersion: v2
+    appVersion: 0.1.23
+    created: "2024-03-26T00:19:42.179053237Z"
+    description: A Helm chart for Kubernetes
+    digest: e2c24503ac342d3e0a2d22517a95b5178f098feebb9127d7ab8fd7cfe66bae0f
+    name: efs-simulator
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/efs-simulator-0.1.23/efs-simulator-0.1.23.tgz
+    version: 0.1.23
+  - annotations:
+      managed-by: ncr
+    apiVersion: v2
     appVersion: 0.1.22
     created: "2024-03-25T23:38:07.335928067Z"
     description: A Helm chart for Kubernetes
@@ -211,4 +223,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/efs-simulator-0.1.0/efs-simulator-0.1.0.tgz
     version: 0.1.0
-generated: "2024-03-25T23:38:07.336041898Z"
+generated: "2024-03-26T00:19:42.179224077Z"
