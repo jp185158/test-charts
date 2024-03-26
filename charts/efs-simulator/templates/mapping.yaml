@@ -20,3 +20,13 @@ spec:
   service: efs-simulator:9001
   allow_upgrade:
     - websocket
+
+---
+apiVersion: getambassador.io/v3alpha1
+kind: TCPMapping
+metadata:
+  name:  efs-simulator-mqtt
+spec:
+  host: efs-simulator-mqtt
+  port: 9001
+  service: efs-simulator:9001
