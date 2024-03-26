@@ -1,0 +1,9 @@
+apiVersion: getambassador.io/v3alpha1
+kind: TCPMapping
+metadata:
+  name: efs-simulator-mqtt
+  namespace: efs-simulator
+spec:
+  host: store.ncr.corp
+  port: 9001
+  service: efs-simulator:9001
