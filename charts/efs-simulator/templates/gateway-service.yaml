@@ -16,7 +16,7 @@ spec:
   - name: tcp
     port: 9001
     protocol: TCP
-    targetPort: efs-simulator:9001
+    targetPort: 9001
   selector:
     profile: main
     service: ambassador
