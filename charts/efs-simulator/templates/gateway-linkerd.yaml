@@ -1,6 +1,28 @@
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
+  name: mqtt-server
+  namespace: emissary
+spec:
+  port: 1883
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: TCP
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: mqtt-server-auth
+  namespace: emissary
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: mqtt-server
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
   name: mqtt-ws-server
   namespace: emissary
 spec:

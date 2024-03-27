@@ -21,6 +21,26 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
+  name: efs-simulator-mqtt
+spec:
+  port: 183
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: TCP
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: efs-simulator-mqtt-auth
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: efs-simulator-mqtt
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
   name: efs-simulator-mqttws
 spec:
   port: 9001

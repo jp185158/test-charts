@@ -1,7 +1,21 @@
 apiVersion: getambassador.io/v3alpha1
 kind: Listener
 metadata:
-  name: listener-efs-simulator-mosquitto
+  name: listener-efs-simulator-mqtt
+  namespace: emissary
+spec:
+  hostBinding:
+    namespace:
+      from: ALL
+  port: 1883
+  protocolStack:
+  - TCP
+  securityModel: INSECURE
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: listener-efs-simulator-mqtt-ws
   namespace: emissary
 spec:
   hostBinding:

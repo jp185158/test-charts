@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/allow-shared-ip: ingress-key
-  name: efs-simulator-mqtt
+  name: efs-simulator-ingress
   namespace: emissary
 spec:
   allocateLoadBalancerNodePorts: true
@@ -13,6 +13,10 @@ spec:
   - IPv4
   ipFamilyPolicy: SingleStack
   ports:
+  - name: mqtt
+    port: 1883
+    protocol: TCP
+    targetPort: 1883
   - name: tcp
     port: 9001
     protocol: TCP

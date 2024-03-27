@@ -4,5 +4,14 @@ metadata:
   name: efs-simulator-mqtt
   namespace: efs-simulator
 spec:
+  port: 1883
+  service: efs-simulator.efs-simulator:1883
+---
+apiVersion: getambassador.io/v3alpha1
+kind: TCPMapping
+metadata:
+  name: efs-simulator-mqtt-ws
+  namespace: efs-simulator
+spec:
   port: 9001
   service: efs-simulator.efs-simulator:9001
