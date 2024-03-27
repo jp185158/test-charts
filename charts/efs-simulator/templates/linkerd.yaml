@@ -23,10 +23,10 @@ kind: Server
 metadata:
   name: efs-simulator-mqtt
 spec:
-  port: 183
+  port: 1883
   podSelector:
     matchLabels: {} # every pod
-  proxyProtocol: TCP
+  proxyProtocol: opaque
 ---
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
