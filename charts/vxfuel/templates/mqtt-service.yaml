@@ -4,7 +4,7 @@ metadata:
   name: mqtt-service
 spec:
   selector:
-    app: vxfuel
+    app: {{ .Values.global.appName }}
   ports:
     - name: mqtt
       protocol: TCP

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: vxfuel-persist-claim
+  name: {{ .Values.global.appName }}-persist-claim
 spec:
   storageClassName: local-storage
   accessModes:

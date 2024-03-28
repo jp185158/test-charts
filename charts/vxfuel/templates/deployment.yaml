@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: vxfuel-deployment
+  name: {{ .Values.global.appName }}-deployment
   labels:
-    app: vxfuel
+    app: {{ .Values.global.appName }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: vxfuel
+      app: {{ .Values.global.appName }}
   template:
     metadata:
       labels:
-        app: vxfuel
+        app: {{ .Values.global.appName }}
     spec:
       hostname: panther2
       volumes:
-      - name: vxfuel-persist
+      - name: {{ .Values.global.appName }}-persist
         persistentVolumeClaim:
-          claimName: vxfuel-persist-claim
+          claimName: {{ .Values.global.appName }}-persist-claim
       containers:
-      - name: vxfuel
+      - name: {{ .Values.global.appName }}
         image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/vxfuel:0.1.23
         command:
         - "/usr/bin/tini"
@@ -29,7 +29,7 @@ spec:
         - "--"
         - "/opt/config/docker-configure-run.sh"
         volumeMounts:
-        - name: vxfuel-persist
+        - name: {{ .Values.global.appName }}-persist
           mountPath: "/persist/"
         env:
         - name: USER
