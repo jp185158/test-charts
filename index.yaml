@@ -391,6 +391,19 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/efs-simulator-0.1.0/efs-simulator-0.1.0.tgz
     version: 0.1.0
+  jtpfuel:
+  - annotations:
+      managed-by: ncr
+    apiVersion: v2
+    appVersion: 0.1.39
+    created: "2024-03-28T21:44:53.288016345Z"
+    description: vxFuel Helm chart for Kubernetes
+    digest: e4ff1552f73df3af772d17b2ea65f37452743deb7b49e75548c268470f5105c4
+    name: jtpfuel
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/jtpfuel-0.1.39/jtpfuel-0.1.39.tgz
+    version: 0.1.39
   vxfuel:
   - annotations:
       managed-by: ncr
@@ -416,4 +429,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-03-28T21:13:28.751548274Z"
+generated: "2024-03-28T21:44:53.288116252Z"
