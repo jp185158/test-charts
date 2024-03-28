@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: {{ .Values.global.appName }}-persist-pv
+  name: {{ .Chart.Name }}-persist-pv
 spec:
   capacity:
     storage: 20Gi
@@ -11,5 +11,5 @@ spec:
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   hostPath:
-    path: /opt/{{ .Values.global.appName }}/persist
+    path: /opt/{{ .Chart.Name }}/persist
   

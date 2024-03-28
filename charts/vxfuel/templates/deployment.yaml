@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Values.global.appName }}-deployment
+  name: {{ .Chart.Name }}-deployment
   labels:
-    app: {{ .Values.global.appName }}
+    app: {{ .Chart.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Values.global.appName }}
+      app: {{ .Chart.Name }}
   template:
     metadata:
       labels:
-        app: {{ .Values.global.appName }}
+        app: {{ .Chart.Name }}
     spec:
       hostname: panther2
       volumes:
-      - name: {{ .Values.global.appName }}-persist
+      - name: {{ .Chart.Name }}-persist
         persistentVolumeClaim:
-          claimName: {{ .Values.global.appName }}-persist-claim
+          claimName: {{ .Chart.Name }}-persist-claim
       containers:
-      - name: {{ .Values.global.appName }}
+      - name: {{ .Chart.Name }}
         image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/vxfuel:0.1.23
         command:
         - "/usr/bin/tini"
@@ -29,7 +29,7 @@ spec:
         - "--"
         - "/opt/config/docker-configure-run.sh"
         volumeMounts:
-        - name: {{ .Values.global.appName }}-persist
+        - name: {{ .Chart.Name }}-persist
           mountPath: "/persist/"
         env:
         - name: USER

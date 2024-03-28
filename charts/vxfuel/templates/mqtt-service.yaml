@@ -4,7 +4,7 @@ metadata:
   name: mqtt-service
 spec:
   selector:
-    app: {{ .Values.global.appName }}
+    app: {{ .Chart.Name }}
   ports:
     - name: mqtt
       protocol: TCP

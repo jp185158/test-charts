@@ -4,7 +4,7 @@ metadata:
   name: vnc-service
 spec:
   selector:
-    app: {{ .Values.global.appName }}
+    app: {{ .Chart.Name }}
   ports:
     - protocol: TCP
       port: 5901
