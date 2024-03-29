@@ -1,0 +1,17 @@
+apiVersion: getambassador.io/v3alpha1
+kind: TCPMapping
+metadata:
+  name: {{ .Chart.Name }}-mqtt
+  namespace: vx
+spec:
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
+  service: mqtt-service:1883
+---
+apiVersion: getambassador.io/v3alpha1
+kind: TCPMapping
+metadata:
+  name: {{ .Chart.Name }}-mqtt-ws
+  namespace: vx
+spec:
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
+  service: mqtt-service:9001

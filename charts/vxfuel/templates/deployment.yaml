@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vxfuel-deployment
+  labels:
+    app: vxfuel
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vxfuel
+  template:
+    metadata:
+      labels:
+        app: vxfuel
+    spec:
+      hostname: panther2
+      volumes:
+      - name: vxfuel-persist
+        persistentVolumeClaim:
+          claimName: vxfuel-persist-claim
+      containers:
+      - name: vxfuel
+        image: {{ .Values.global.repository }}/vxfuel:{{ .Values.global.imageVersion }}
+        command:
+        - "/usr/bin/tini"
+        args:
+        - "--"
+        - "/opt/config/docker-configure-run.sh"
+        volumeMounts:
+        - name: vxfuel-persist
+          mountPath: "/persist/"
+        env:
+        - name: USER
+          value: pcrfuel
+        - name: PATH
+          value: "/usr/local/bin:/usr/bin:/bin:/opt/cxoffice/bin:/sbin:/usr/sbin"
+        ports:
+        - containerPort: 1883
+        - containerPort: 9001
+        - containerPort: 5901
+      imagePullSecrets:
+      - name: edge-docker-pull-secret

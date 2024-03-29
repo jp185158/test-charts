@@ -1,0 +1,27 @@
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: {{ .Chart.Name }}-listener-mqtt
+  namespace: emissary
+spec:
+  hostBinding:
+    namespace:
+      from: ALL
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
+  protocolStack:
+  - TCP
+  securityModel: INSECURE
+---
+apiVersion: getambassador.io/v3alpha1
+kind: Listener
+metadata:
+  name: {{ .Chart.Name }}-listener-mqtt-ws
+  namespace: emissary
+spec:
+  hostBinding:
+    namespace:
+      from: ALL
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
+  protocolStack:
+  - TCP
+  securityModel: INSECURE

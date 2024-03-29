@@ -1,0 +1,45 @@
+# TCP Setup
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
+  name: {{ .Chart.Name }}-mqtt-server
+  namespace: emissary
+spec:
+  port: {{ .Values.global.mosquitto.tcpTargetPort }}
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: opaque
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: {{ .Chart.Name }}-mqtt-server-auth
+  namespace: emissary
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: mqtt-server
+---
+# Web Socket Setup
+apiVersion: policy.linkerd.io/v1beta1
+kind: Server
+metadata:
+  name: {{ .Chart.Name }}-mqtt-ws-server
+  namespace: emissary
+spec:
+  port: {{ .Values.global.mosquitto.wsTargetPort }}
+  podSelector:
+    matchLabels: {} # every pod
+  proxyProtocol: HTTP/1
+---
+apiVersion: policy.linkerd.io/v1beta1
+kind: ServerAuthorization
+metadata:
+  name: {{ .Chart.Name }}-mqtt-ws-server-auth
+  namespace: emissary
+spec:
+  client:
+    unauthenticated: true
+  server:
+    name: {{ .Chart.Name }}-mqtt-ws-server
