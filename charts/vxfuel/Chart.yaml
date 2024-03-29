@@ -1,9 +1,0 @@
----
-apiVersion: v2
-description: vxFuel Helm chart for Kubernetes
-name: jtpfuel
-type: application
-version: 0.1.39
-appVersion: 0.1.39
-annotations:
-  managed-by: ncr

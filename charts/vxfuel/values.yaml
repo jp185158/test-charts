@@ -1,3 +1,0 @@
-global:
-  appName: "jtp-fuel"
-  repository: "us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads"
