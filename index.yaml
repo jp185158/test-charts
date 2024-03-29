@@ -408,6 +408,18 @@ entries:
   - annotations:
       managed-by: ncr
     apiVersion: v2
+    appVersion: 0.1.41
+    created: "2024-03-29T18:31:44.007374957Z"
+    description: vxFuel Helm chart for Kubernetes
+    digest: 91d8ad90b1d646f45d5152595736a53769ca6497cab423e3e85dbd413c47f0c9
+    name: vxfuel
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.41/vxfuel-0.1.41.tgz
+    version: 0.1.41
+  - annotations:
+      managed-by: ncr
+    apiVersion: v2
     appVersion: 0.1.37
     created: "2024-03-28T21:13:28.751465789Z"
     description: vxFuel Helm chart for Kubernetes
@@ -429,4 +441,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-03-28T21:44:53.288116252Z"
+generated: "2024-03-29T18:31:44.007466167Z"
