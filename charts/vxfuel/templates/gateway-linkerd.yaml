@@ -5,7 +5,7 @@ metadata:
   name: {{ .Chart.Name }}-mqtt-server
   namespace: emissary
 spec:
-  port: {{ .Values.global.mosquitto.tcpTargetPort }}
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: opaque
@@ -28,7 +28,7 @@ metadata:
   name: {{ .Chart.Name }}-mqtt-ws-server
   namespace: emissary
 spec:
-  port: {{ .Values.global.mosquitto.wsTargetPort }}
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: HTTP/1
