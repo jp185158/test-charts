@@ -1,3 +1,4 @@
 ---
 global:
   efs-simulator:
+    test: true

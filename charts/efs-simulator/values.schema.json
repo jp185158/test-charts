@@ -3,11 +3,18 @@
     "title": "Generated schema for Root",
     "type": "object",
     "properties": {
-      "global": {
-        "type": "object",
-        "properties": {
-          "efs-simulator": {}
+        "global": {
+            "type": "object",
+            "properties": {
+                "efs-simulator": {
+                    "type": "object",
+                    "properties": {
+                        "test": {
+                            "type": "boolean"
+                        }
+                    }
+                }
+            }
         }
-      }
     }
-  }
+}
