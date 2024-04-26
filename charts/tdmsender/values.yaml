@@ -1,0 +1,4 @@
+tdmsender:
+  loglevel: "info"
+mosquitto:
+  websockets_log_level: 255

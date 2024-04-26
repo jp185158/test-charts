@@ -1,0 +1,6 @@
+apiVersion: v2
+name: tdmsender
+appVersion: "1.0"
+description: TDM sender 1.0 
+version: 0.1.0
+type: application

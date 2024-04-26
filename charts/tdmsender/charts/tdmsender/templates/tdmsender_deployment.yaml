@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tdmsender-deployment
+spec:
+  selector:
+    matchLabels:
+      app: tdmsender
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: tdmsender
+    spec:
+      containers:
+      - name: tdmsender
+        image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/tdmsender:latest
+        stdin: true
+        env:
+          - name: TDMSENDER_LOGTOFILE
+            value: {{ .Values.logtofile | default "false" | quote }}
+          - name: TDMSENDER_MQTTBROKER
+            value: "$(MQTT_BROKER_SERVICE_SERVICE_HOST)"
+          - name: TDMSENDER_MQTPORT
+            value: "$(MQTT_BROKER_SERVICE_SERVICE_PORT)"
+          - name: TDMSENDER_BSL_GATEWAY_URL
+            value: {{ .Values.bsl.gateway }}
+          - name: TDMSENDER_LOGLEVEL
+            value: {{ .Values.loglevel | default "info" | quote }}
+          - name: TDMSENDER_BSL_ORGANIZATION
+            value: {{ .Values.bsl.organization }}
+          - name: TDMSENDER_BSL_SHARED_KEY
+            value: {{ .Values.bsl.secret.shared_key }}
+          - name: TDMSENDER_BSL_SECRET_KEY
+            value: {{ .Values.bsl.secret.secret_key }}
+      imagePullSecrets:
+      - name: edge-docker-pull-secret
