@@ -1,5 +1,5 @@
 apiVersion: v2
-name: Tdmsender-Mosquitto
+name: tdmsender-mosquitto
 appVersion: "1.0"
 description: Installation of TDM sender and mosquitto 1.0 
 version: 0.1.0
