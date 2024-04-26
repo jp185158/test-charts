@@ -467,6 +467,23 @@ entries:
   tdmsender-mosquitto:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2024-04-26T09:48:37.063694276Z"
+    dependencies:
+    - name: mosquitto
+      repository: ""
+      version: 0.1.0
+    - name: tdmsender
+      repository: ""
+      version: 0.1.0
+    description: Installation of TDM sender and mosquitto 1.0
+    digest: 8a8a1b5672320947da46f3294346b4531b0c05f5c1e7bc4abbf21bf7b6b5593e
+    name: tdmsender-mosquitto
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/tdmsender-mosquitto-0.1.1/tdmsender-mosquitto-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2024-04-26T09:47:20.26842319Z"
     dependencies:
     - name: mosquitto
@@ -531,4 +548,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-04-26T09:47:20.268525964Z"
+generated: "2024-04-26T09:48:37.063805534Z"
