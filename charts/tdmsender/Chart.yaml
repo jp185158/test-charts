@@ -7,4 +7,6 @@ type: application
 namespace: "my-namespace"
 dependencies:
   - name: "mosquitto"
+    version: "0.1.0"
   - name: "tdmsender"
+    version: "0.1.0"
