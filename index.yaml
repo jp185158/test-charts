@@ -1,5 +1,23 @@
 apiVersion: v1
 entries:
+  Tdmsender-Mosquitto:
+  - apiVersion: v2
+    appVersion: "1.0"
+    created: "2024-04-26T09:22:10.38766725Z"
+    dependencies:
+    - name: mosquitto
+      repository: ""
+      version: 0.1.0
+    - name: tdmsender
+      repository: ""
+      version: 0.1.0
+    description: Installation of TDM sender and mosquitto 1.0
+    digest: 1bb2870ee99358280d85a1e829d1f172f10ca5b28a9ba6fc444dfe072cb4e91d
+    name: Tdmsender-Mosquitto
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/Tdmsender-Mosquitto-0.1.0/Tdmsender-Mosquitto-0.1.0.tgz
+    version: 0.1.0
   efs-simulator:
   - annotations:
       managed-by: ncr
@@ -495,4 +513,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-04-15T13:05:42.164832343Z"
+generated: "2024-04-26T09:22:10.387767697Z"
