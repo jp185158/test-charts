@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "type": "object",
+    "properties": {
+        "mosquitto": {
+            "type": "object",
+            "properties": {
+                "websockets_log_level": {
+                    "type": "integer"
+                }
+            }
+        },
+        "tdmsender": {
+            "type": "object",
+            "properties": {
+                "loglevel": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

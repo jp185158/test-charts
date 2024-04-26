@@ -1,0 +1,10 @@
+apiVersion: v2
+name: Tdmsender-Mosquitto
+appVersion: "1.0"
+description: Installation of TDM sender and mosquitto 1.0 
+version: 0.1.0
+type: application
+namespace: "my-namespace"
+dependencies:
+  - name: "mosquitto"
+  - name: "tdmsender"
