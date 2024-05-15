@@ -465,6 +465,25 @@ entries:
     - https://github.com/jp185158/test-charts/releases/download/jtpfuel-0.1.39/jtpfuel-0.1.39.tgz
     version: 0.1.39
   tdmsender-mosquitto:
+  - annotations:
+      managed-by: ncr
+    apiVersion: v2
+    appVersion: 1.0.3
+    created: "2024-05-15T08:18:05.75173807Z"
+    dependencies:
+    - name: mosquitto
+      repository: ""
+      version: 0.1.0
+    - name: tdmsender
+      repository: ""
+      version: 0.1.0
+    description: Installation of TDM sender and mosquitto 1.0
+    digest: b085d9cb4f26978aa75e952262fe0264c8aada7a97e26d07b0038a237624dea9
+    name: tdmsender-mosquitto
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/tdmsender-mosquitto-0.1.3/tdmsender-mosquitto-0.1.3.tgz
+    version: 0.1.3
   - apiVersion: v2
     appVersion: "1.0"
     created: "2024-05-15T08:03:14.473768914Z"
@@ -565,4 +584,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-05-15T08:03:14.473864382Z"
+generated: "2024-05-15T08:18:05.751847434Z"
