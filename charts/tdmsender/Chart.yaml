@@ -1,9 +1,14 @@
 apiVersion: v2
 name: tdmsender-mosquitto
-appVersion: "1.0"
 description: Installation of TDM sender and mosquitto 1.0 
-version: 0.1.2
 type: application
+
+version: 0.1.3
+appVersion: 1.0.3
+
+annotations:
+  managed-by: ncr
+
 namespace: "my-namespace"
 dependencies:
   - name: "mosquitto"
