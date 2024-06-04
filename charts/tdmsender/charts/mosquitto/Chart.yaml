@@ -1,0 +1,6 @@
+apiVersion: v2
+name: mosquitto
+appVersion: "1.0"
+description: Mosquitto MQTT
+version: 0.1.0
+type: application
