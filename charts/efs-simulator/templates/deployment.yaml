@@ -20,7 +20,7 @@ spec:
         - name: edge-docker-pull-secret      
       containers:
         - name: efs-simulator
-          image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:1.0.2
+          image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:1.0.2.1
           ports:
           - containerPort: 8000
           - containerPort: 1883
