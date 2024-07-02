@@ -22,6 +22,24 @@ entries:
   - annotations:
       managed-by: ncr
     apiVersion: v2
+    appVersion: 1.1.4
+    created: "2024-07-02T17:18:53.548955794Z"
+    description: A Helm chart for Kubernetes
+    digest: c66e13dd7879a97cdcb3abc94331625094d0bb0a705fa14e696799f20250f6cf
+    keywords:
+    - retail
+    - next-gen
+    - fuel
+    name: efs-simulator
+    sources:
+    - https://github.com/jp185158/test-charts/tree/main/charts/efs-simulator
+    type: application
+    urls:
+    - https://github.com/jp185158/test-charts/releases/download/efs-simulator-0.1.45/efs-simulator-0.1.45.tgz
+    version: 0.1.45
+  - annotations:
+      managed-by: ncr
+    apiVersion: v2
     appVersion: 1.0.23
     created: "2024-06-27T00:47:35.303563618Z"
     description: A Helm chart for Kubernetes
@@ -638,4 +656,4 @@ entries:
     urls:
     - https://github.com/jp185158/test-charts/releases/download/vxfuel-0.1.36/vxfuel-0.1.36.tgz
     version: 0.1.36
-generated: "2024-06-27T00:47:35.30397158Z"
+generated: "2024-07-02T17:18:53.549435614Z"
