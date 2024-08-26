@@ -3,8 +3,8 @@ name: efs-simulator
 description: A Helm chart for Kubernetes
 type: application
 
-version: 0.1.45
-appVersion: 1.1.4
+version: 0.1.46
+appVersion: 1.1.27
 annotations:
   managed-by: ncr
 
