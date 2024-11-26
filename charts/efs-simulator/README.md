@@ -1,5 +1,5 @@
 # EFS Simulator
-Version 1.1.83
+Version 0.11.38
 
 ## Overview
 This chart will deploy the EFS Simulator.

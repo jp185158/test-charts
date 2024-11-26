@@ -6,4 +6,4 @@ metadata:
 spec:
   hostname: "efs-simulator.store.ncr.corp"
   prefix: "/web/"
-  service: efs-simulator:80
+  service: efs-simulator:{{ .Values.global.efsSimulator.httpInternalPort }}

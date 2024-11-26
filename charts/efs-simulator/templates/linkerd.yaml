@@ -1,9 +1,9 @@
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
-  name: efs-simulator-server
+  name: {{ .Chart.Name }}-server
 spec:
-  port: 8000
+  port: {{ .Values.global.efsSimulator.httpExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: HTTP/1
@@ -11,19 +11,19 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
 metadata:
-  name: efs-simulator-server-auth
+  name: {{ .Chart.Name }}-server-auth
 spec:
   client:
     unauthenticated: true
   server:
-    name: efs-simulator-server
+    name: {{ .Chart.Name }}-server
 ---
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
-  name: efs-simulator-mqtt
+  name: {{ .Chart.Name }}-mqtt
 spec:
-  port: 1883
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: opaque
@@ -31,19 +31,19 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
 metadata:
-  name: efs-simulator-mqtt-auth
+  name: {{ .Chart.Name }}-mqtt-auth
 spec:
   client:
     unauthenticated: true
   server:
-    name: efs-simulator-mqtt
+    name: {{ .Chart.Name }}-mqtt
 ---
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
-  name: efs-simulator-mqttws
+  name: {{ .Chart.Name }}-mqttws
 spec:
-  port: 9001
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: HTTP/1
@@ -51,9 +51,9 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
 metadata:
-  name: efs-simulator-mqttws-auth
+  name: {{ .Chart.Name }}-mqttws-auth
 spec:
   client:
     unauthenticated: true
   server:
-    name: efs-simulator-mqttws
+    name: {{ .Chart.Name }}-mqttws

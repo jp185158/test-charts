@@ -8,13 +8,13 @@ spec:
   ports:
     - name: http
       protocol: TCP
-      port: 80
-      targetPort: 8000
+      port: {{ .Values.global.efsSimulator.httpInternalPort }}
+      targetPort: {{ .Values.global.efsSimulator.httpExternalPort }}
     - name: mqttws
       protocol: TCP
-      port: 9001
-      targetPort: 9001
+      port: {{ .Values.global.mosquitto.wsExternalPort }}
+      targetPort: {{ .Values.global.mosquitto.wsExternalPort }}
     - name: mqtt
       protocol: TCP
-      port: 1883
-      targetPort: 1883      
+      port: {{ .Values.global.mosquitto.tcpExternalPort }}
+      targetPort: {{ .Values.global.mosquitto.tcpExternalPort }}      

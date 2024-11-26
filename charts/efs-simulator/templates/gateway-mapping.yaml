@@ -1,17 +1,17 @@
 apiVersion: getambassador.io/v3alpha1
 kind: TCPMapping
 metadata:
-  name: efs-simulator-mqtt
+  name: {{ .Chart.Name }}-mqtt
   namespace: efs-simulator
 spec:
-  port: 1883
-  service: efs-simulator.efs-simulator:1883
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
+  service: efs-simulator.efs-simulator:{{ .Values.global.mosquitto.tcpExternalPort }}
 ---
 apiVersion: getambassador.io/v3alpha1
 kind: TCPMapping
 metadata:
-  name: efs-simulator-mqtt-ws
+  name: {{ .Chart.Name }}-mqtt-ws
   namespace: efs-simulator
 spec:
-  port: 9001
-  service: efs-simulator.efs-simulator:9001
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
+  service: efs-simulator.efs-simulator:{{ .Values.global.mosquitto.wsExternalPort }}

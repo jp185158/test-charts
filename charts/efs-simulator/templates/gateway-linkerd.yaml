@@ -1,10 +1,10 @@
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
-  name: mqtt-server
+  name: {{ .Chart.Name }}-mqtt-server
   namespace: emissary
 spec:
-  port: 1883
+  port: {{ .Values.global.mosquitto.tcpExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: opaque
@@ -12,21 +12,21 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
 metadata:
-  name: mqtt-server-auth
+  name: {{ .Chart.Name }}-mqtt-server-auth
   namespace: emissary
 spec:
   client:
     unauthenticated: true
   server:
-    name: mqtt-server
+    name: {{ .Chart.Name }}-mqtt-server
 ---
 apiVersion: policy.linkerd.io/v1beta1
 kind: Server
 metadata:
-  name: mqtt-ws-server
+  name: {{ .Chart.Name }}-mqtt-ws-server
   namespace: emissary
 spec:
-  port: 9001
+  port: {{ .Values.global.mosquitto.wsExternalPort }}
   podSelector:
     matchLabels: {} # every pod
   proxyProtocol: HTTP/1
@@ -34,10 +34,10 @@ spec:
 apiVersion: policy.linkerd.io/v1beta1
 kind: ServerAuthorization
 metadata:
-  name: mqtt-ws-server-auth
+  name: {{ .Chart.Name }}-mqtt-ws-server-auth
   namespace: emissary
 spec:
   client:
     unauthenticated: true
   server:
-    name: mqtt-ws-server
+    name: {{ .Chart.Name }}-mqtt-ws-server

@@ -3,7 +3,7 @@ kind: Service
 metadata:
   annotations:
     metallb.universe.tf/allow-shared-ip: ingress-key
-  name: efs-simulator-ingress
+  name: {{ .Chart.Name }}-ingress
   namespace: emissary
 spec:
   allocateLoadBalancerNodePorts: true
@@ -14,13 +14,13 @@ spec:
   ipFamilyPolicy: SingleStack
   ports:
   - name: mqtt
-    port: 1883
+    port: {{ .Values.global.mosquitto.tcpExternalPort }}
     protocol: TCP
-    targetPort: 1883
+    targetPort: {{ .Values.global.mosquitto.tcpExternalPort }}
   - name: tcp
-    port: 9001
+    port: {{ .Values.global.mosquitto.wsExternalPort }}
     protocol: TCP
-    targetPort: 9001
+    targetPort: {{ .Values.global.mosquitto.wsExternalPort }}
   selector:
     profile: main
     service: ambassador

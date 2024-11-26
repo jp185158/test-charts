@@ -1,4 +1,11 @@
----
 global:
-  efs-simulator:
-    test: true
+  imageVersion: 0.11.38
+  repository: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads
+  image_pull_secrets:
+    name: edge-docker-pull-secret
+  mosquitto:
+    tcpExternalPort: 1883
+    wsExternalPort: 9001
+  efsSimulator:
+    httpExternalPort: 8000
+    httpInternalPort: 80

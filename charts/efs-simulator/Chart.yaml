@@ -1,17 +1,14 @@
 apiVersion: v2
 name: efs-simulator
-description: A Helm chart for Kubernetes
+description: EFS Client Simulator
 type: application
+appVersion: 0.11.38
+version: 0.1.56
 
-version: 0.1.49
-appVersion: 1.1.83
 annotations:
-  managed-by: ncr
+  managed-by: ncrvoyix
 
 keywords:
   - retail
   - next-gen
   - fuel
-
-sources:
-  - https://github.com/jp185158/test-charts/tree/main/charts/efs-simulator

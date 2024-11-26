@@ -1,20 +1,56 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Generated schema for Root",
-    "type": "object",
-    "properties": {
-        "global": {
-            "type": "object",
-            "properties": {
-                "efs-simulator": {
-                    "type": "object",
-                    "properties": {
-                        "test": {
-                            "type": "boolean"
-                        }
-                    }
-                }
+  "type": "object",
+  "properties": {
+    "global": {
+      "type": "object",
+      "properties": {
+        "imageVersion": {
+          "type": "string"
+        },
+        "repository": {
+          "type": "string"
+        },
+        "image_pull_secrets": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
             }
+          }
+        },
+        "mosquitto": {
+          "type": "object",
+          "properties": {
+            "tcpExternalPort": {
+              "type": "integer"
+            },
+            "wsExternalPort": {
+              "type": "integer"
+            }
+          },
+          "required": ["tcpExternalPort", "wsExternalPort"]
+        },
+        "efsSimulator": {
+          "type": "object",
+          "properties": {
+            "httpExternalPort": {
+              "type": "integer"
+            },
+            "httpInternalPort": {
+              "type": "integer"
+            }
+          },
+          "required": ["httpExternalPort", "httpInternalPort"]
         }
+      },
+      "required": [
+        "imageVersion", 
+        "repository", 
+        "image_pull_secrets",
+        "mosquitto",
+        "efsSimulator"
+      ]
     }
+  },
+  "required": ["global"]
 }

@@ -17,11 +17,19 @@ spec:
         app: efs-simulator
     spec:
       imagePullSecrets:
-        - name: edge-docker-pull-secret      
+        - name: {{ .Values.global.image_pull_secrets.name }}   
+      volumes:
+      - name: config
+        configMap:
+          name: mosquitto-config
       containers:
         - name: efs-simulator
-          image: us-east1-docker.pkg.dev/ret-edge-pltf-infra/workloads/efs-simulator:1.1.83
+          image: "{{ .Values.global.repository }}/efs-simulator:{{ .Values.global.imageVersion }}"
+          volumeMounts:
+          - name: config
+            mountPath: /mosquitto/config/mosquitto.conf
+            subPath: mosquitto.conf
           ports:
-          - containerPort: 8000
-          - containerPort: 1883
-          - containerPort: 9001
+          - containerPort: {{ .Values.global.efsSimulator.httpExternalPort }}
+          - containerPort: {{ .Values.global.mosquitto.tcpExternalPort }}
+          - containerPort: {{ .Values.global.mosquitto.wsExternalPort }}
